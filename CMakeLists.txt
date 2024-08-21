@@ -10,8 +10,6 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CXX_DISABLE_WERROR True)
 
-cmake_policy(SET CMP0135 OLD)
-
 include(CMakeDependentOption)
 include(cmake-module/base.cmake)
 include(cmake-module/ide.cmake)
@@ -22,7 +20,7 @@ add_project_dependency(pinocchio REQUIRED)
 add_project_dependency(pinocchio_visualizers REQUIRED)
 add_project_dependency(assimp REQUIRED)
 add_project_dependency(fmt 10.0 REQUIRED)
-add_project_dependency(rerun_sdk 0.17.0 REQUIRED)
+add_project_dependency(rerun_sdk REQUIRED PKG_CONFIG_REQUIRES "rerun_sdk >= 0.17.0")
 
 set(INSTALL_DOCUMENTATION OFF)
 set(CMAKE_VERBOSE_MAKEFILE OFF)
